@@ -101,7 +101,10 @@ const router = createRouter({
       name: 'network-error',
       component: NetworkErrorView
     }
-  ]
+  ],
+  scrollBehavior(){
+    return {top: 0}
+  }
 })
 
 router.beforeEach(() => {
