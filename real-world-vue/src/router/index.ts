@@ -44,6 +44,9 @@ const router = createRouter({
       name: 'event-layout',
       component: EventLayoutView,
       props: true,
+      beforeEnter: (to) => {
+        // put API call here
+      },
 
       children: [
         { 
