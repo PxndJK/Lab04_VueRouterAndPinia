@@ -20,11 +20,11 @@ const router = useRouter()
 const store = useMessageStore()
 
 function register() {
-
     store.updateMessage('You are successfully registered for ' + props.event?.title)
     setTimeout(() => {
         store.resetMessage()
     }, 3000)
+    
     router.push({
         name: 'event-detail',
         params: {
@@ -36,5 +36,5 @@ function register() {
 </script>
 <template>
        <p>Registration from here</p>
-       <button @clik="register"> Register Me </button>
+       <button @click="register"> Register Me </button>
 </template>

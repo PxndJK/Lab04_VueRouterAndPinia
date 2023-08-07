@@ -8,7 +8,7 @@ export const useMessageStore = defineStore('message', {
       this.message = message
     },
     resetMessage() {
-      this.message = ''
+      this.message = ' '
     }
   }
 })
