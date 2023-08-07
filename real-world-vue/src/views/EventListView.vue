@@ -23,7 +23,7 @@ const props = defineProps({
   }
 })
 
-EventService.getEvent(props.limit, props.page).then((response: AxiosResponse<EventItem[]>) => {
+EventService.getEvent(3, props.page).then((response: AxiosResponse<EventItem[]>) => {
   events.value = response.data
   totalEvent.value = response.headers['x-total-count']
 }).catch(() => {
@@ -36,7 +36,7 @@ EventService.getEvent(props.limit, props.page).then((response: AxiosResponse<Eve
 onBeforeRouteUpdate((to, from, next) => {
   const toPage = Number(to.query.page)
   // NProgress.start()
-  EventService.getEvent(2, toPage).then((response: AxiosResponse<EventItem[]>) => {
+  EventService.getEvent(3, toPage).then((response: AxiosResponse<EventItem[]>) => {
     events.value = response.data
     totalEvent.value = response.headers['x-total-count']
     next()
@@ -71,7 +71,7 @@ const decreaseLimit = () => {
 
 const hasNextPage = computed(() => {
   //first calculate the total page
-  const totalPages = Math.ceil(totalEvent.value / 2)
+  const totalPages = Math.ceil(totalEvent.value / 3)
   return props.page.valueOf() < totalPages
 })
 </script>
