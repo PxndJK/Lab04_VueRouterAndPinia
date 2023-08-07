@@ -45,7 +45,7 @@ const router = createRouter({
       path: '/event/:id',
       name: 'event-layout',
       component: EventLayoutView,
-      props: true,
+      // props: true,
       beforeEnter: (to) => {
         const id: number = parseInt(to.params.id as string)
         const eventStore = useEventStore()
@@ -74,13 +74,13 @@ const router = createRouter({
         {
           path: 'edit',
           name: 'event-edit',
-          props: true,
+          // props: true,
           component: EventEditView
       },
         {
           path: 'register',
           name: 'event-register',
-          props: true,
+          // props: true,
           component: EventRegisterView
         }
       ]
